@@ -86,7 +86,7 @@ Earlier versions combined fuzzy ratio with Jaccard similarity, bag-of-words cosi
 
 ---
 
-## BERT Model (brief)
+## BERT Model
 
 `bert/bert.py` fine-tunes `bert-base-uncased` as an (IdeaUnit, note) pair classifier.
 
@@ -94,7 +94,7 @@ It uses **temporal alignment**: for each IdeaUnit, it extracts the matching span
 
 Training setup: a seeded 80/20 split of `train.csv`, 4 epochs, learning rate 2e-5, batch size 8, and alignment margin 0.3. The decision threshold is tuned on validation data to maximize F1. On this split, the model reaches ROC-AUC 0.79 and PR-AUC 0.74.
 
-## LLM Model (brief)
+## LLM Model 
 
 `LLM/` prompts **LLaMA 3 8B Instruct** in zero-shot and one-shot settings. Each prediction comes from the next-token logits for `YES` and `NO`. For one-shot prompting, the in-context example for each topic is chosen by lexical overlap. [`LLM/README.md`](LLM/README.md) has full details.
 
